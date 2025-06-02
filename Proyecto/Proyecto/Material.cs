@@ -13,9 +13,11 @@ namespace Proyecto
         private int precio_comptra;
         private int precio_venta;
         private int cantidadActual;
-        private int cantidadregistrada;
+        private int cantidadregistrada; /* abastecimiento */
+        private int cantidadVentas; 
+       
 
-        public Materiales(string titulo, int iSBN, int precio_comptra, int precio_venta, int cantidadActual, int cantidadregistrada)
+        public Materiales(string titulo, int iSBN, int precio_comptra, int precio_venta, int cantidadActual, int cantidadregistrada, int cantidadVentas)
         {
             this.Titulo1 = titulo;
             this.ISBN1 = iSBN;
@@ -23,6 +25,8 @@ namespace Proyecto
             this.Precio_venta = precio_venta;
             this.CantidadActual = cantidadActual;
             this.Cantidadregistrada = cantidadregistrada;
+            this.CantidadVentas = cantidadVentas;
+
         }
 
         public string Titulo1 { get => Titulo; set => Titulo = value; }
@@ -31,5 +35,6 @@ namespace Proyecto
         public int Precio_venta { get => precio_venta; set => precio_venta = value; }
         public int CantidadActual { get => cantidadActual; set => cantidadActual = value; }
         public int Cantidadregistrada { get => cantidadregistrada; set => cantidadregistrada = value; }
-    }
+        public int CantidadVentas { get => cantidadVentas; set => cantidadVentas = value; }
+    }   
 }

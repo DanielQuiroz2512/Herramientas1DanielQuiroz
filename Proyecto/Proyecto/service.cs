@@ -18,16 +18,15 @@ namespace Proyecto
 
         internal Tienda Tienda { get => tienda; set => tienda = value; }
 
-        public void crearpersona(Persona persona)
+        public string crearpersona(Persona persona)
         {
             Persona Existe = Buscarpersona(persona.Cedula);
             if (Existe != null)
             {
-                Console.WriteLine("Ya existe una persona con esa Cedula");
-                return;
+            return "Ya existe una persona con esa Cedula" ;
             }
             Tienda.Persona.Add(persona);
-            Console.WriteLine("Se ha creado el Usuario");
+            return "Se ha creado el Usuario";
         }
 
         public Persona Buscarpersona(string cedula)
@@ -98,8 +97,8 @@ namespace Proyecto
                 Console.WriteLine("No existe material con este ID");
                 return;
             }
-            existe.CantidadActual = +1;
-            existe.Cantidadregistrada = +1;
+            existe.CantidadActual += 1;
+            existe.Cantidadregistrada += 1;
         }
 
         public void Vender_libros(int ISBN)
@@ -110,8 +109,8 @@ namespace Proyecto
                 Console.WriteLine("No existe material con este ID");
                 return;
             }
-            existe.cantidadVentas = +1;
-            existe.CantidadActual = -1;
+            existe.CantidadVentas =+1;
+            existe.CantidadActual =-1;
             
 
         }
@@ -186,10 +185,27 @@ namespace Proyecto
             }
         }
 
+        public void Buscar_Libro_vendido()
+        {
+            if (Tienda.Catalogo == null || Tienda.Catalogo.Count == 0)
+            {
+                Console.WriteLine("No hay materiales registrados.");
+                return;
+            }
+            int Libromasvendido = Tienda.Catalogo[0].CantidadVentas;
+            foreach( var material in Tienda.Catalogo)
+            {
+                if (material.CantidadVentas < Libromasvendido)
+                {
+                    Libromasvendido = material.CantidadVentas;
+
+                }
+               Console.WriteLine("El libro mas vendido es" +  Libromasvendido);
+
+            }
 
 
-
-
+        }
 
     }
 }
