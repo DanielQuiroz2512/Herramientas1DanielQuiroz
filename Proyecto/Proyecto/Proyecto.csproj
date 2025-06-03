@@ -58,6 +58,12 @@
     <Compile Include="Fornt\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornt\inventario\Inventario1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornt\inventario\Inventario1.Designer.cs">
+      <DependentUpon>Inventario1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,8 +109,6 @@
   <ItemGroup>
     <None Include="Resources\ChatGPT Image Jun 2, 2025, 12_52_39 AM.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fornt\inventario\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
