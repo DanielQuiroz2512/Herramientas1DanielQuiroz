@@ -35,13 +35,22 @@ namespace Proyecto
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Cajero Menu_cajero = new Cajero();
+            Menu_cajero.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Inventario1 Menu_inventario = new Inventario1();
             Menu_inventario.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Infoventas Menu_infventas = new Infoventas();
+            Menu_infventas.Show();
             this.Hide();
         }
     }

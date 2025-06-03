@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
+            this.Inventario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button4
+            // Inventario
             // 
-            this.button4.Location = new System.Drawing.Point(406, 191);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 89);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Inventario";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Inventario.Location = new System.Drawing.Point(406, 191);
+            this.Inventario.Name = "Inventario";
+            this.Inventario.Size = new System.Drawing.Size(148, 89);
+            this.Inventario.TabIndex = 3;
+            this.Inventario.Text = "Inventario";
+            this.Inventario.UseVisualStyleBackColor = true;
+            this.Inventario.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -61,6 +61,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Info ventas";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -80,7 +81,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Inventario);
             this.Name = "Admin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Interfaz_Load);
@@ -91,7 +92,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Inventario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

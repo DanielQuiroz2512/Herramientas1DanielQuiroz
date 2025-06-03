@@ -16,5 +16,30 @@ namespace Proyecto
         {
             InitializeComponent();
         }
+
+        private void Inventario1_Load(object sender, EventArgs e)
+        {
+            textBox4.Visible = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registrar_libros_Click(object sender, EventArgs e)
+        {
+            textBox4.Visible = true; // Mostramos al hacer clic
+        }
+
+        private void text_ISBN(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Textbox_ISBN(object sender, EventArgs e)
+        {
+
+        }
     }
 }

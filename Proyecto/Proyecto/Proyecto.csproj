@@ -46,16 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fornt\1ControlUser.cs">
+    <Compile Include="Fornt\Cajero\Cajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fornt\1ControlUser.Designer.cs">
+    <Compile Include="Fornt\Cajero\Cajero.Designer.cs">
+      <DependentUpon>Cajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornt\1_Principales\1ControlUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornt\1_Principales\1ControlUser.Designer.cs">
       <DependentUpon>1ControlUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fornt\Admin.cs">
+    <Compile Include="Fornt\1_Principales\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fornt\Admin.Designer.cs">
+    <Compile Include="Fornt\1_Principales\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornt\inventario\Inventario1.cs">
@@ -64,29 +70,38 @@
     <Compile Include="Fornt\inventario\Inventario1.Designer.cs">
       <DependentUpon>Inventario1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornt\Información ventas\Infoventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornt\Información ventas\Infoventas.Designer.cs">
+      <DependentUpon>Infoventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Inventario.cs" />
-    <Compile Include="Material.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="Reglas de negocio\Inventario.cs" />
+    <Compile Include="Reglas de negocio\Material.cs" />
+    <Compile Include="Reglas de negocio\Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service.cs" />
-    <Compile Include="Tienda.cs" />
-    <Compile Include="Fornt\Usuario.cs">
+    <Compile Include="Reglas de negocio\1_Tienda.cs" />
+    <Compile Include="Fornt\1_Principales\CajeroV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fornt\Usuario.Designer.cs">
-      <DependentUpon>Usuario.cs</DependentUpon>
+    <Compile Include="Fornt\1_Principales\CajeroV.Designer.cs">
+      <DependentUpon>CajeroV.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Fornt\1ControlUser.resx">
+    <EmbeddedResource Include="Fornt\1_Principales\1ControlUser.resx">
       <DependentUpon>1ControlUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fornt\Admin.resx">
+    <EmbeddedResource Include="Fornt\1_Principales\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornt\inventario\Inventario1.resx">
+      <DependentUpon>Inventario1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿namespace Proyecto
 {
-    partial class Usuario
+    partial class CajeroV
     {
         /// <summary>
         /// Required designer variable.

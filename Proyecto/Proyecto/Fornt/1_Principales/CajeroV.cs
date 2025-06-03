@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto
 {
-    public partial class Usuario : Form
+    public partial class CajeroV : Form
     {
-        public Usuario()
+        public CajeroV()
         {
             InitializeComponent();
         }

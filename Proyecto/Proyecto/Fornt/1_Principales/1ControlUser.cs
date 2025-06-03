@@ -65,7 +65,7 @@ namespace Proyecto
             }
             else if (rol == "Cajero")
             {
-                Usuario Menucajera = new Usuario();
+                CajeroV Menucajera = new CajeroV();
                 this.Hide();
                 Menucajera.Show();
             }
