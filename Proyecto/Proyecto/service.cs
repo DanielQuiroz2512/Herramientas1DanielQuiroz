@@ -48,6 +48,7 @@ namespace Proyecto
                 Console.WriteLine("Ya existe material con este ID");
                 return;
             }
+
             Tienda.Catalogo.Add(material);
             Console.WriteLine("Se ha creado el material con exito");
         }
@@ -60,8 +61,13 @@ namespace Proyecto
                     Console.WriteLine("El libro con ID: " + ISBN + "Es: " + material);
                     return material;
                 }
+                else if (material.ISBN1 != ISBN)
+                {
+                    Console.WriteLine("No existe material con este ID");
+                }
             }
             return null;
+
         }
         public Materiales BuscarMaterial_For_name(string Titulo)
         {
@@ -123,7 +129,7 @@ namespace Proyecto
                 Console.WriteLine("No existe material con este ID");
                 return;
             }
-            Console.WriteLine("Se han realizado " + existe.CantidadActual + " de registro para el libro con ID" + existe.ISBN1 + "el nombre es " + existe.Titulo1);
+            Console.WriteLine("Se han realizado " + existe.Cantidadregistrada + " de registro para el libro con ID" + existe.ISBN1 + "el nombre es " + existe.Titulo1);
 
         }
 
@@ -203,7 +209,14 @@ namespace Proyecto
                Console.WriteLine("El libro mas vendido es" +  Libromasvendido);
 
             }
+             foreach (var material in Tienda.Catalogo)
+            {
+                if (material.CantidadVentas == Libromasvendido)
+                {
+                    Console.WriteLine($"- Título: {material.Titulo1}, Cantidad Vendida: {material.CantidadVentas}");
+                }
 
+            }
 
         }
 
