@@ -54,19 +54,27 @@ namespace Proyecto
         }
         public Materiales BuscarMaterial_For_ID(int ISBN)
         {
+            Console.WriteLine(tienda.Catalogo[0]);
+            Materiales bmaterial = null;
             foreach (Materiales material in tienda.Catalogo)
             {
                 if (material.ISBN1 == ISBN)
                 {
-                    Console.WriteLine("El libro con ID: " + ISBN + "Es: " + material);
-                    return material;
+                    Console.WriteLine("El libro con ID: " + ISBN + "Es: " + material );
+                    bmaterial = material;
+                    return bmaterial;
+
                 }
                 else if (material.ISBN1 != ISBN)
                 {
                     Console.WriteLine("No existe material con este ID");
+                
+                
                 }
+                return bmaterial;
+
             }
-            return null;
+            return bmaterial;
 
         }
         public Materiales BuscarMaterial_For_name(string Titulo)

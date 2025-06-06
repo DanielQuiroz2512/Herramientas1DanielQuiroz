@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button_Registrar_libro = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button_Buscar_por_ISBN = new System.Windows.Forms.Button();
             this.button_Buscar_por_Titulo = new System.Windows.Forms.Button();
             this.button_Eliminar_Libro = new System.Windows.Forms.Button();
@@ -44,6 +43,9 @@
             this.textBox_Precio_de_venta = new System.Windows.Forms.TextBox();
             this.button_Registrar = new System.Windows.Forms.Button();
             this.button_Eliminar = new System.Windows.Forms.Button();
+            this.button_Finalizar = new System.Windows.Forms.Button();
+            this.button_buscar_name = new System.Windows.Forms.Button();
+            this.button_buscar_ISBN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Registrar_libro
@@ -56,15 +58,6 @@
             this.button_Registrar_libro.UseVisualStyleBackColor = true;
             this.button_Registrar_libro.Click += new System.EventHandler(this.button_Registrar_libro_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(586, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(8, 8);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button_Buscar_por_ISBN
             // 
             this.button_Buscar_por_ISBN.Location = new System.Drawing.Point(100, 233);
@@ -73,6 +66,7 @@
             this.button_Buscar_por_ISBN.TabIndex = 2;
             this.button_Buscar_por_ISBN.Text = "Buscar por ISBN";
             this.button_Buscar_por_ISBN.UseVisualStyleBackColor = true;
+            this.button_Buscar_por_ISBN.Click += new System.EventHandler(this.button_Buscar_por_ISBN_Click);
             // 
             // button_Buscar_por_Titulo
             // 
@@ -82,6 +76,7 @@
             this.button_Buscar_por_Titulo.TabIndex = 3;
             this.button_Buscar_por_Titulo.Text = "Buscar por Titulo";
             this.button_Buscar_por_Titulo.UseVisualStyleBackColor = true;
+            this.button_Buscar_por_Titulo.Click += new System.EventHandler(this.button_Buscar_por_Titulo_Click);
             // 
             // button_Eliminar_Libro
             // 
@@ -101,6 +96,7 @@
             this.button_Abastecimiento.TabIndex = 5;
             this.button_Abastecimiento.Text = "Abastecimiento";
             this.button_Abastecimiento.UseVisualStyleBackColor = true;
+            this.button_Abastecimiento.Click += new System.EventHandler(this.button_Abastecimiento_Click);
             // 
             // Texto_Titulo
             // 
@@ -169,7 +165,7 @@
             // 
             // button_Registrar
             // 
-            this.button_Registrar.Location = new System.Drawing.Point(641, 295);
+            this.button_Registrar.Location = new System.Drawing.Point(646, 289);
             this.button_Registrar.Name = "button_Registrar";
             this.button_Registrar.Size = new System.Drawing.Size(287, 36);
             this.button_Registrar.TabIndex = 14;
@@ -179,7 +175,7 @@
             // 
             // button_Eliminar
             // 
-            this.button_Eliminar.Location = new System.Drawing.Point(640, 295);
+            this.button_Eliminar.Location = new System.Drawing.Point(646, 291);
             this.button_Eliminar.Name = "button_Eliminar";
             this.button_Eliminar.Size = new System.Drawing.Size(288, 35);
             this.button_Eliminar.TabIndex = 15;
@@ -187,11 +183,44 @@
             this.button_Eliminar.UseVisualStyleBackColor = true;
             this.button_Eliminar.Click += new System.EventHandler(this.button_Eliminar_Click);
             // 
+            // button_Finalizar
+            // 
+            this.button_Finalizar.Location = new System.Drawing.Point(851, 584);
+            this.button_Finalizar.Name = "button_Finalizar";
+            this.button_Finalizar.Size = new System.Drawing.Size(207, 84);
+            this.button_Finalizar.TabIndex = 16;
+            this.button_Finalizar.Text = "Finalizar";
+            this.button_Finalizar.UseVisualStyleBackColor = true;
+            this.button_Finalizar.Click += new System.EventHandler(this.button_Finalizar_Click);
+            // 
+            // button_buscar_name
+            // 
+            this.button_buscar_name.Location = new System.Drawing.Point(646, 290);
+            this.button_buscar_name.Name = "button_buscar_name";
+            this.button_buscar_name.Size = new System.Drawing.Size(292, 36);
+            this.button_buscar_name.TabIndex = 17;
+            this.button_buscar_name.Text = "Buscar";
+            this.button_buscar_name.UseVisualStyleBackColor = true;
+            this.button_buscar_name.Click += new System.EventHandler(this.button_buscar_name_Click);
+            // 
+            // button_buscar_ISBN
+            // 
+            this.button_buscar_ISBN.Location = new System.Drawing.Point(646, 290);
+            this.button_buscar_ISBN.Name = "button_buscar_ISBN";
+            this.button_buscar_ISBN.Size = new System.Drawing.Size(292, 35);
+            this.button_buscar_ISBN.TabIndex = 18;
+            this.button_buscar_ISBN.Text = "Buscar";
+            this.button_buscar_ISBN.UseVisualStyleBackColor = true;
+            this.button_buscar_ISBN.Click += new System.EventHandler(this.button_buscar_ISBN_Click);
+            // 
             // inventari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 680);
+            this.Controls.Add(this.button_buscar_ISBN);
+            this.Controls.Add(this.button_buscar_name);
+            this.Controls.Add(this.button_Finalizar);
             this.Controls.Add(this.button_Eliminar);
             this.Controls.Add(this.button_Registrar);
             this.Controls.Add(this.textBox_Precio_de_venta);
@@ -206,7 +235,6 @@
             this.Controls.Add(this.button_Eliminar_Libro);
             this.Controls.Add(this.button_Buscar_por_Titulo);
             this.Controls.Add(this.button_Buscar_por_ISBN);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button_Registrar_libro);
             this.Name = "inventari";
             this.Text = "inventari";
@@ -219,7 +247,6 @@
         #endregion
 
         private System.Windows.Forms.Button button_Registrar_libro;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button_Buscar_por_ISBN;
         private System.Windows.Forms.Button button_Buscar_por_Titulo;
         private System.Windows.Forms.Button button_Eliminar_Libro;
@@ -234,5 +261,8 @@
         private System.Windows.Forms.TextBox textBox_Precio_de_venta;
         private System.Windows.Forms.Button button_Registrar;
         private System.Windows.Forms.Button button_Eliminar;
+        private System.Windows.Forms.Button button_Finalizar;
+        private System.Windows.Forms.Button button_buscar_name;
+        private System.Windows.Forms.Button button_buscar_ISBN;
     }
 }

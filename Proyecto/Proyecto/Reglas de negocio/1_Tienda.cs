@@ -17,7 +17,7 @@ namespace Proyecto
         {
             this.Persona = persona;
             this.Catalogo = catalogo;
-            Móvimiento1 = móvimiento;
+            this.Móvimiento1 = móvimiento;
         }
 
         internal List<Persona> Persona { get => persona; set => persona = value; }

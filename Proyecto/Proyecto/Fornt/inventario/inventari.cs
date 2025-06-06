@@ -13,6 +13,9 @@ namespace Proyecto
     public partial class inventari : Form
     {
         private service service;
+        private Form1 Form1;
+        private Admin Admin;
+
         public inventari()
         {
             InitializeComponent();
@@ -31,6 +34,8 @@ namespace Proyecto
             textBox_Precio_de_venta.Visible = false;
             button_Registrar.Visible = false;
             button_Eliminar.Visible = false;
+            button_buscar_name.Visible = false;
+            button_buscar_ISBN.Visible = false;
 
         }
 
@@ -130,6 +135,77 @@ namespace Proyecto
             }
 
             service.EliminarMaterial(isbn);
+            MessageBox.Show(service.EliminarMaterial(isbn));
+            textBox_ISBN.Visible = false;
+            button_Eliminar.Visible = false;
+            Texto_Titulo.Visible = false;
+
+        }
+
+        private void button_Finalizar_Click(object sender, EventArgs e)
+        {
+            Form1 hola = new Form1();
+            Admin hol2 = new Admin();
+            hola.Close();
+            hol2.Close();
+            this.Close();
+        }
+
+        private void button_Buscar_por_Titulo_Click(object sender, EventArgs e)
+        {
+            text_Titutlo.Visible = true;
+            textBox_Titulo.Visible = true;
+            button_buscar_name.Visible = true;
+            
+        }
+
+        private void button_buscar_name_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_Titulo.Text))
+            {
+                MessageBox.Show("Debes ingresar un Titulo");
+                return;
+            }
+            string titulo = textBox_Titulo.Text;
+            Materiales libro = service.BuscarMaterial_For_ID(titulo);
+
+            text_Titutlo.Visible = false;
+            textBox_Titulo.Visible = false;
+            button_buscar_name.Visible = false;
+
+        }
+
+        private void button_Buscar_por_ISBN_Click(object sender, EventArgs e)
+        {
+            textBox_ISBN.Visible = true;
+            Texto_Titulo.Visible = true;
+            button_buscar_ISBN.Visible = true;
+
+        }
+
+        private void button_buscar_ISBN_Click(object sender, EventArgs e)
+        {
+            int isbn;
+            if (!int.TryParse(textBox_ISBN.Text, out isbn))
+            {
+                MessageBox.Show("Debes ingresar un ISBN valido");
+                return;
+            }
+            if (isbn <= 0)
+            {
+                MessageBox.Show("El ISBN debe ser un numero positivo");
+                return;
+            }
+            Materiales libro = service.BuscarMaterial_For_ID(isbn);
+            MessageBox.Show(service.BuscarMaterial_For_ID(isbn));
+            textBox_ISBN.Visible = false;
+            Texto_Titulo.Visible = false;
+            button_buscar_ISBN.Visible = false;
+        }
+
+        private void button_Abastecimiento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

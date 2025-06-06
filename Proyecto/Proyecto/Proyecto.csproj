@@ -52,11 +52,11 @@
     <Compile Include="Fornt\Cajero\Cajero.Designer.cs">
       <DependentUpon>Cajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fornt\1_Principales\1ControlUser.cs">
+    <Compile Include="Fornt\1_Principales\AControlUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fornt\1_Principales\1ControlUser.Designer.cs">
-      <DependentUpon>1ControlUser.cs</DependentUpon>
+    <Compile Include="Fornt\1_Principales\AControlUser.Designer.cs">
+      <DependentUpon>AControlUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornt\1_Principales\Admin.cs">
       <SubType>Form</SubType>
@@ -94,11 +94,17 @@
     <Compile Include="Fornt\1_Principales\CajeroV.Designer.cs">
       <DependentUpon>CajeroV.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Fornt\1_Principales\1ControlUser.resx">
-      <DependentUpon>1ControlUser.cs</DependentUpon>
+    <EmbeddedResource Include="Fornt\1_Principales\AControlUser.resx">
+      <DependentUpon>AControlUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornt\1_Principales\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornt\Cajero\Cajero.resx">
+      <DependentUpon>Cajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornt\Información ventas\Infoventas.resx">
+      <DependentUpon>Infoventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornt\inventario\inventari.resx">
       <DependentUpon>inventari.cs</DependentUpon>
