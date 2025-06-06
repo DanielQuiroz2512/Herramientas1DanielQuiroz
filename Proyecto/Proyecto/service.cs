@@ -54,36 +54,22 @@ namespace Proyecto
         }
         public Materiales BuscarMaterial_For_ID(int ISBN)
         {
-            Console.WriteLine(tienda.Catalogo[0]);
-            Materiales bmaterial = null;
-            foreach (Materiales material in tienda.Catalogo)
+            foreach (Materiales material in Tienda.Catalogo)
             {
                 if (material.ISBN1 == ISBN)
                 {
-                    Console.WriteLine("El libro con ID: " + ISBN + "Es: " + material );
-                    bmaterial = material;
-                    return bmaterial;
-
+                    return material;
                 }
-                else if (material.ISBN1 != ISBN)
-                {
-                    Console.WriteLine("No existe material con este ID");
-                
-                
-                }
-                return bmaterial;
-
             }
-            return bmaterial;
+            return null;
 
         }
         public Materiales BuscarMaterial_For_name(string Titulo)
         {
-            foreach (Materiales material in tienda.Catalogo)
+            foreach (var material in Tienda.Catalogo)
             {
-                if (material.Titulo1 == Titulo)
+                if (material.Titulo1.Equals(Titulo, StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine("El libro con Titulo: " + Titulo + "Es: " + material);
                     return material;
                 }
             }
@@ -141,12 +127,11 @@ namespace Proyecto
 
         }
 
-        public void MostrarLibrosMasCaros()
+        public string MostrarLibrosMasCaros()
         {
             if (Tienda.Catalogo == null || Tienda.Catalogo.Count == 0)
             {
-                Console.WriteLine("No hay materiales registrados.");
-                return;
+                return "No hay materiales registrados.";
             }
 
             // Encontrar el precio máximo
@@ -159,24 +144,25 @@ namespace Proyecto
                 }
             }
 
-            // Mostrar todos los libros con ese precio máximo
-            Console.WriteLine("Libros con el precio más alto:");
+            // Construir el mensaje con los libros más caros
+            string resultado = "Libros con el precio más alto:\n";
 
             foreach (var material in Tienda.Catalogo)
             {
                 if (material.Precio_venta == precioMaximo)
                 {
-                    Console.WriteLine($"- Título: {material.Titulo1}, Precio: {material.Precio_venta}");
+                    resultado += $"- Título: {material.Titulo1}, Precio: {material.Precio_venta}\n";
                 }
             }
+
+            return resultado;
         }
 
-        public void MostrarLibrosmenosCostoso()
+        public string MostrarLibrosmenosCostoso()
         {
             if (Tienda.Catalogo == null || Tienda.Catalogo.Count == 0)
             {
-                Console.WriteLine("No hay materiales registrados.");
-                return;
+                return "No hay materiales registrados.";
             }
 
             double precioMaximo = Tienda.Catalogo[0].Precio_venta;
@@ -188,44 +174,48 @@ namespace Proyecto
                 }
             }
 
-            Console.WriteLine("Libros con el precio mas Bajo:");
-
+            string resultado = "Libros con el precio más bajo:\n";
             foreach (var material in Tienda.Catalogo)
             {
                 if (material.Precio_venta == precioMaximo)
                 {
-                    Console.WriteLine($"- Título: {material.Titulo1}, Precio: {material.Precio_venta}");
+                    resultado += $"- Título: {material.Titulo1}, Precio: {material.Precio_venta}\n";
                 }
             }
+
+            return resultado;
         }
 
-        public void Buscar_Libro_vendido()
+        public string Buscar_Libro_vendido()
         {
             if (Tienda.Catalogo == null || Tienda.Catalogo.Count == 0)
             {
-                Console.WriteLine("No hay materiales registrados.");
-                return;
+                return "No hay materiales registrados.";
             }
-            int Libromasvendido = Tienda.Catalogo[0].CantidadVentas;
-            foreach( var material in Tienda.Catalogo)
+
+            int libroMasVendido = Tienda.Catalogo[0].CantidadVentas;
+
+            // Primero determinamos la mayor cantidad de ventas
+            foreach (var material in Tienda.Catalogo)
             {
-                if (material.CantidadVentas < Libromasvendido)
+                if (material.CantidadVentas > libroMasVendido)
                 {
-                    Libromasvendido = material.CantidadVentas;
-
+                    libroMasVendido = material.CantidadVentas;
                 }
-               Console.WriteLine("El libro mas vendido es" +  Libromasvendido);
-
             }
-             foreach (var material in Tienda.Catalogo)
+
+            // Construimos el resultado
+            string resultado = $"El libro más vendido se ha vendido {libroMasVendido} veces:\n";
+
+            foreach (var material in Tienda.Catalogo)
             {
-                if (material.CantidadVentas == Libromasvendido)
+                if (material.CantidadVentas == libroMasVendido)
                 {
-                    Console.WriteLine($"- Título: {material.Titulo1}, Cantidad Vendida: {material.CantidadVentas}");
+                    resultado += $"- Título: {material.Titulo1}, Cantidad Vendida: {material.CantidadVentas}\n";
                 }
-
             }
 
+            return resultado;
         }
 
     }

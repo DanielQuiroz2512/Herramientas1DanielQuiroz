@@ -52,17 +52,20 @@ namespace Proyecto
 
         private void button_mas_costoso_Click(object sender, EventArgs e)
         {
-            service.MostrarLibrosMasCaros();
+            string resultado = service.MostrarLibrosMasCaros();
+            MessageBox.Show(resultado);
         }
 
         private void button_menos_costoso_Click(object sender, EventArgs e)
         {
-            service.MostrarLibrosmenosCostoso();
+            string resultado = service.MostrarLibrosmenosCostoso();
+            MessageBox.Show(resultado);
         }
 
         private void button_mas_vendido_Click(object sender, EventArgs e)
         {
-            service.Buscar_Libro_vendido();
+            string resultado = service.Buscar_Libro_vendido();
+            MessageBox.Show(resultado);
         }
     }
 }

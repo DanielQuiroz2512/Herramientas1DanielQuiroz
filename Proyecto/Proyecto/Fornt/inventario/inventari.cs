@@ -133,9 +133,8 @@ namespace Proyecto
                 MessageBox.Show("El ISBN debe ser un numero positivo");
                 return;
             }
-
-            service.EliminarMaterial(isbn);
-            MessageBox.Show(service.EliminarMaterial(isbn));
+            string mensaje = service.EliminarMaterial(isbn);
+            MessageBox.Show(mensaje);
             textBox_ISBN.Visible = false;
             button_Eliminar.Visible = false;
             Texto_Titulo.Visible = false;
@@ -161,18 +160,24 @@ namespace Proyecto
 
         private void button_buscar_name_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_Titulo.Text))
+            string titulo = textBox_Titulo.Text;
+
+            if (string.IsNullOrWhiteSpace(titulo))
             {
-                MessageBox.Show("Debes ingresar un Titulo");
+                MessageBox.Show("Debes ingresar un título válido.");
                 return;
             }
-            string titulo = textBox_Titulo.Text;
-            Materiales libro = service.BuscarMaterial_For_ID(titulo);
 
-            text_Titutlo.Visible = false;
-            textBox_Titulo.Visible = false;
-            button_buscar_name.Visible = false;
+            Materiales libro = service.BuscarMaterial_For_name(titulo);
 
+            if (libro == null)
+            {
+                MessageBox.Show("No se encontró un libro con ese título.");
+            }
+            else
+            {
+                MessageBox.Show($"Libro encontrado:\nTítulo: {libro.Titulo1}\nISBN: {libro.ISBN1}");
+            }
         }
 
         private void button_Buscar_por_ISBN_Click(object sender, EventArgs e)
@@ -188,16 +193,25 @@ namespace Proyecto
             int isbn;
             if (!int.TryParse(textBox_ISBN.Text, out isbn))
             {
-                MessageBox.Show("Debes ingresar un ISBN valido");
+                MessageBox.Show("Debes ingresar un ISBN válido");
                 return;
             }
             if (isbn <= 0)
             {
-                MessageBox.Show("El ISBN debe ser un numero positivo");
+                MessageBox.Show("El ISBN debe ser un número positivo");
                 return;
             }
             Materiales libro = service.BuscarMaterial_For_ID(isbn);
-            MessageBox.Show(service.BuscarMaterial_For_ID(isbn));
+
+            if (libro == null)
+            {
+                MessageBox.Show("No se encontró un libro con ese ISBN.");
+            }
+            else
+            {
+                MessageBox.Show($"Título: {libro.Titulo1}\nISBN: {libro.ISBN1}\nPrecio de venta: {libro.Precio_venta}");
+            }
+
             textBox_ISBN.Visible = false;
             Texto_Titulo.Visible = false;
             button_buscar_ISBN.Visible = false;
