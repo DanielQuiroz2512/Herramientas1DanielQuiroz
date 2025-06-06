@@ -64,17 +64,17 @@
     <Compile Include="Fornt\1_Principales\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fornt\inventario\Inventario1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fornt\inventario\Inventario1.Designer.cs">
-      <DependentUpon>Inventario1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornt\Información ventas\Infoventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fornt\Información ventas\Infoventas.Designer.cs">
       <DependentUpon>Infoventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornt\inventario\inventari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornt\inventario\inventari.Designer.cs">
+      <DependentUpon>inventari.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,8 +100,8 @@
     <EmbeddedResource Include="Fornt\1_Principales\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fornt\inventario\Inventario1.resx">
-      <DependentUpon>Inventario1.cs</DependentUpon>
+    <EmbeddedResource Include="Fornt\inventario\inventari.resx">
+      <DependentUpon>inventari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

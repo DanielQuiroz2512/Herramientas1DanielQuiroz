@@ -82,16 +82,16 @@ namespace Proyecto
             return null;
         }
 
-        public void EliminarMaterial(int ISBN)
+        public string EliminarMaterial(int ISBN)
         {
             Materiales existe = BuscarMaterial_For_ID(ISBN);
             if (existe == null)
             {
-                Console.WriteLine("No existe material con este ID");
-                return;
+                
+                return "No existe material con este ID";
             }
             Tienda.Catalogo.Remove(existe);
-            Console.WriteLine("Se ha Eliminado el material con exito");
+            return "Se ha Eliminado el material con exito";
 
         }
 
